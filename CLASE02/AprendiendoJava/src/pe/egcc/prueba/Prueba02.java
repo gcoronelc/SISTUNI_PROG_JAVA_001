@@ -17,7 +17,10 @@ public class Prueba02 {
     pers1.imprimir();
     
     Persona pers2 = new Persona("Gustavo Coronel", 51, true);
-    pers2.imprimir();
-    
+    // pers2.imprimir();
+    System.out.println("---------------------------");
+    System.out.println("Nombre: " + pers2.getNombre());
+    System.out.println("Edad: " + pers2.getEdad());
+    System.out.println("Casado: " + (pers2.isCasado()?"SI":"NO"));
   }
 }
