@@ -17,7 +17,6 @@ public class Persona {
     this.nombre = "Claudia Ramos";
     this.edad = 25;
     this.casado = false;
-    System.out.println("Objecto creado.");
   }
 
   public Persona(String nombre, int edad, boolean casado) {
@@ -26,13 +25,6 @@ public class Persona {
     this.casado = casado;
   }
 
-  @Override
-  protected void finalize() throws Throwable {
-    System.err.println("Chau objeto.");
-  }
-
-  
-  
   public void imprimir() {
     String datos;
     datos = getNombre() + " - " + getEdad() + " - " + isCasado();
