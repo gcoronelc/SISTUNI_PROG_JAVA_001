@@ -14,9 +14,10 @@ public class Persona {
   private boolean casado;
 
   public Persona() {
-    this.nombre = "Claudia Ramos";
-    this.edad = 25;
-    this.casado = false;
+    //this.nombre = "Claudia Ramos";
+    //this.edad = 25;
+    //this.casado = false;
+    this("Claudia Ramos", 25, false);
     System.out.println("Objecto creado.");
   }
 
