@@ -31,8 +31,6 @@ public class Persona {
     System.err.println("Chau objeto.");
   }
 
-  
-  
   public void imprimir() {
     String datos;
     datos = getNombre() + " - " + getEdad() + " - " + isCasado();
