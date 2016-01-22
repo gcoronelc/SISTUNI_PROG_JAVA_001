@@ -16,5 +16,6 @@ public class Prueba01 {
       System.out.println("Factorial de "
               + i + " es " + MyMath.factorial(i));
     }
+            
   }
 }
