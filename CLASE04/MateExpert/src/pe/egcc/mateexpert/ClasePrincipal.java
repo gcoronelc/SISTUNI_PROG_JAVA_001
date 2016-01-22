@@ -1,5 +1,7 @@
 package pe.egcc.mateexpert;
 
+import pe.egcc.mateexpert.view.MainView;
+
 /**
  *
  * @author Eric Gustavo Coronel Castillo
@@ -13,7 +15,7 @@ public class ClasePrincipal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MainView.main(null);
     }
 
 }

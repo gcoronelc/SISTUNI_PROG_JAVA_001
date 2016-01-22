@@ -5,6 +5,8 @@
  */
 package pe.egcc.mateexpert.view;
 
+import javax.swing.JInternalFrame;
+
 /**
  *
  * @author GustavoCoronel
@@ -16,6 +18,7 @@ public class MainView extends javax.swing.JFrame {
    */
   public MainView() {
     initComponents();
+    this.setExtendedState(MAXIMIZED_BOTH);
   }
 
   /**
@@ -40,8 +43,14 @@ public class MainView extends javax.swing.JFrame {
     helpMenu = new javax.swing.JMenu();
     contentMenuItem = new javax.swing.JMenuItem();
     aboutMenuItem = new javax.swing.JMenuItem();
+    menuMate = new javax.swing.JMenu();
+    menuMateFactorial = new javax.swing.JMenuItem();
+    menuMateMcdMcm = new javax.swing.JMenuItem();
+    menuMateFibonacci = new javax.swing.JMenuItem();
+    menuMatePrimo = new javax.swing.JMenuItem();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setTitle("MATEMATICO EXPERTO");
 
     fileMenu.setMnemonic('f');
     fileMenu.setText("File");
@@ -104,6 +113,32 @@ public class MainView extends javax.swing.JFrame {
 
     menuBar.add(helpMenu);
 
+    menuMate.setText("Matemáticas");
+
+    menuMateFactorial.setText("Factorial");
+    menuMateFactorial.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        menuMateFactorialActionPerformed(evt);
+      }
+    });
+    menuMate.add(menuMateFactorial);
+
+    menuMateMcdMcm.setText("MCD y MCM");
+    menuMateMcdMcm.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        menuMateMcdMcmActionPerformed(evt);
+      }
+    });
+    menuMate.add(menuMateMcdMcm);
+
+    menuMateFibonacci.setText("Fibonacci");
+    menuMate.add(menuMateFibonacci);
+
+    menuMatePrimo.setText("Primo");
+    menuMate.add(menuMatePrimo);
+
+    menuBar.add(menuMate);
+
     setJMenuBar(menuBar);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,6 +158,14 @@ public class MainView extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
       System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+  private void menuMateFactorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMateFactorialActionPerformed
+    cargarFormulario(FactorialView.class);
+  }//GEN-LAST:event_menuMateFactorialActionPerformed
+
+  private void menuMateMcdMcmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMateMcdMcmActionPerformed
+    cargarFormulario(McdMcmView.class);
+  }//GEN-LAST:event_menuMateMcdMcmActionPerformed
 
   /**
    * @param args the command line arguments
@@ -171,10 +214,38 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JMenu fileMenu;
   private javax.swing.JMenu helpMenu;
   private javax.swing.JMenuBar menuBar;
+  private javax.swing.JMenu menuMate;
+  private javax.swing.JMenuItem menuMateFactorial;
+  private javax.swing.JMenuItem menuMateFibonacci;
+  private javax.swing.JMenuItem menuMateMcdMcm;
+  private javax.swing.JMenuItem menuMatePrimo;
   private javax.swing.JMenuItem openMenuItem;
   private javax.swing.JMenuItem pasteMenuItem;
   private javax.swing.JMenuItem saveAsMenuItem;
   private javax.swing.JMenuItem saveMenuItem;
   // End of variables declaration//GEN-END:variables
+
+  private void cargarFormulario(Class<?> aClass) {
+    try {
+      // Variable
+      JInternalFrame view = null;
+      // Verificar si ya existe
+      for(JInternalFrame bean: desktopPane.getAllFrames()){
+        if(aClass.isInstance(bean)){
+          view = bean;
+          break;
+        }
+      }
+      // Si NO lo encuentra lo creamos
+      if(view == null){
+        view = (JInternalFrame) Class.forName(aClass.getName()).newInstance();
+        desktopPane.add(view);
+      }
+      // Se debe activar el formulario
+      view.setVisible(true);
+      view.setSelected(true);
+    } catch (Exception e) {
+    }
+  }
 
 }
