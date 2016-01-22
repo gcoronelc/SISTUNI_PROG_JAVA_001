@@ -5,6 +5,8 @@
  */
 package pe.egcc.mateexpert.view;
 
+import pe.egcc.mateexpert.controller.MateController;
+
 /**
  *
  * @author GustavoCoronel
@@ -25,27 +27,82 @@ public class FactorialView extends javax.swing.JInternalFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    jLabel1 = new javax.swing.JLabel();
+    txtNumero = new javax.swing.JTextField();
+    btnProcesar = new javax.swing.JButton();
+    lblResultado = new javax.swing.JLabel();
+
     setClosable(true);
     setIconifiable(true);
     setMaximizable(true);
     setResizable(true);
     setTitle("FACTORIAL");
 
+    jLabel1.setText("Número:");
+
+    btnProcesar.setText("Procesar");
+    btnProcesar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnProcesarActionPerformed(evt);
+      }
+    });
+
+    lblResultado.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+    lblResultado.setText("jLabel2");
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 394, Short.MAX_VALUE)
+      .addGroup(layout.createSequentialGroup()
+        .addGap(44, 44, 44)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addGroup(layout.createSequentialGroup()
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addContainerGap(342, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 274, Short.MAX_VALUE)
+      .addGroup(layout.createSequentialGroup()
+        .addGap(11, 11, 11)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+          .addComponent(jLabel1)
+          .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(btnProcesar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(52, 52, 52)
+        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(196, Short.MAX_VALUE))
     );
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
+  private void btnProcesarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcesarActionPerformed
+    // Variables
+    int num;
+    long fact;
+    // Dato
+    num = Integer.parseInt(txtNumero.getText());
+    // Proceso
+    MateController control;
+    control = new MateController();
+    fact = control.calcFactorial(num);
+    // Reporte
+    String repo = "Factorial de " +
+            num + " es " + fact;
+    lblResultado.setText(repo);
+  }//GEN-LAST:event_btnProcesarActionPerformed
+
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton btnProcesar;
+  private javax.swing.JLabel jLabel1;
+  private javax.swing.JLabel lblResultado;
+  private javax.swing.JTextField txtNumero;
   // End of variables declaration//GEN-END:variables
 }
