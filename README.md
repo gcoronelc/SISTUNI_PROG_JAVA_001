@@ -13,7 +13,7 @@
 
 - Fecha: 15-ENE-2016
 - http://gcoronelc.blogspot.pe/2013/09/java-poo-leccion-01.html
-
+- https://www.edx.org/course/programacion-orientada-objetos-mexicox-upevipn02x
 
 # CLASE 02
 
@@ -44,3 +44,5 @@
 
 - 27-ENE-2015
 - http://gcoronelc.blogspot.pe/2013/09/java-poo-leccion-06-interfaces.html
+- http://gcoronelc.blogspot.pe/2013/09/java-poo-leccion-07-arreglos.html
+- http://gcoronelc.blogspot.pe/2014/04/java-poo-leccion-08-colecciones.html
