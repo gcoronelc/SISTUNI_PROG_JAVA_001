@@ -7,6 +7,7 @@
 - Instructor: Eric Gustavo Coronel Castillo
 - Blog: www.desarrollasoftware.com
 - Email: gcoronelc@gmail.com
+- http://gcoronelc.blogspot.pe/p/java.html
 
 # CLASE 01
 
@@ -38,3 +39,8 @@
 - 25-ENE-2015
 - http://gcoronelc.blogspot.pe/2013/09/java-poo-leccion-05-herencia.html
 
+
+# CLASE 06
+
+- 27-ENE-2015
+- http://gcoronelc.blogspot.pe/2013/09/java-poo-leccion-06-interfaces.html
